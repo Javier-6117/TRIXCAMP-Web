@@ -1,0 +1,55 @@
+# Backlog del Producto - TRIXCAMP
+
+## Historias de Usuario
+
+### Sprint 1: Autenticación y Estructura Base
+
+| ID | Historia de Usuario | Prioridad | Sprint | Estado |
+|----|---------------------|-----------|--------|--------|
+| HU-001 | Como usuario quiero registrarme para acceder al sistema | Alta | 1 | Completo |
+| HU-002 | Como usuario quiero iniciar sesión para usar la plataforma | Alta | 1 | Completo |
+| HU-003 | Como administrador quiero ver un dashboard para gestionar el sistema | Alta | 1 | Completo |
+
+### Sprint 2: Gestión de Equipos y Jugadores
+
+| ID | Historia de Usuario | Prioridad | Sprint | Estado |
+|----|---------------------|-----------|--------|--------|
+| HU-004 | Como administrador quiero crear equipos para organizar jugadores | Alta | 2 | Pendiente |
+| HU-005 | Como administrador quiero agregar jugadores para mantener registros | Alta | 2 | Pendiente |
+| HU-006 | Como administrador quiero asignar jugadores a equipos para organización | Alta | 2 | Pendiente |
+
+### Sprint 3: Gestión de Campos
+
+| ID | Historia de Usuario | Prioridad | Sprint | Estado |
+|----|---------------------|-----------|--------|--------|
+| HU-007 | Como administrador quiero registrar campos deportivos para gestión | Media | 3 | Pendiente |
+| HU-008 | Como administrador quiero ver condiciones del campo para monitoreo | Media | 3 | Pendiente |
+
+### Sprint 4: Gestión de Entrenamientos
+
+| ID | Historia de Usuario | Prioridad | Sprint | Estado |
+|----|---------------------|-----------|--------|--------|
+| HU-009 | Como administrador quiero agendar entrenamientos para organización | Media | 4 | Pendiente |
+| HU-010 | Como administrador quiero asignar campos a entrenamientos para optimización | Media | 4 | Pendiente |
+
+## Definición de Terminado (DoD)
+
+Cada historia de usuario debe cumplir con:
+- [ ] Código desarrollado y probado
+- [ ] Integración con base de datos funcionando
+- [ ] Interfaz de usuario implementada
+- [ ] Pruebas unitarias pasando
+- [ ] Documentación actualizada
+- [ ] Revisión de código aprobada
+
+## Métricas de Seguimiento
+
+- **Velocidad del equipo:** 5 puntos por sprint
+- **Burndown chart:** Actualizado semanalmente
+- **Tasa de terminación:** 80% objetivo
+
+## Próximos Sprints
+
+**Sprint 2 (14-20 Oct 2025):** Gestión de equipos y jugadores
+**Sprint 3 (21-27 Oct 2025):** Gestión de campos deportivos  
+**Sprint 4 (28 Oct-03 Nov 2025):** Gestión de entrenamientos
