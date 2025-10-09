@@ -1,0 +1,37 @@
+# Bitácora
+
+**Fecha:** 08 de Octubre 2025
+**Responsable:** ["Equipo INFINITUM"]
+
+## Actividades Realizadas
+- [x] Configuración inicial del proyecto TRIXCAMP
+- [x] Creación de estructura backend con Express.js y Firebase
+- [x] Desarrollo de frontend con HTML, CSS y JavaScript
+- [x] Configuración de autenticación con Firebase Auth
+- [x] Creación de repositorio en GitHub con estructura organizada
+
+## Módulos Implementados
+- ✅ Sistema de autenticación (login/registro)
+- ✅ Gestión de equipos (CRUD completo)
+- ✅ Gestión de jugadores (con posición, edad, equipo)
+- ✅ Gestión de campos deportivos (con sensores)
+- ✅ Gestión de entrenamientos (agendamiento)
+
+## Problemas Encontrados
+- Configuración de Firebase inicial
+- Organización de estructura de carpetas en GitHub
+- Exclusión de archivos sensibles en .gitignore
+
+## Soluciones Aplicadas
+- Configuración correcta de Firebase Admin y Client
+- Creación de estructura organizada en doc/ y backlog/
+- Implementación de .gitignore para archivos sensibles
+
+## Próximos Pasos
+- [ ] Completar documentación de requerimientos
+- [ ] Agregar más bitácoras de seguimiento
+- [ ] Desarrollar funcionalidades adicionales del dashboard
+- [ ] Realizar pruebas de integración
+
+## Observaciones
+El proyecto avanza según lo planeado. La estructura de GitHub queda organizada profesionalmente.
