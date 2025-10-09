@@ -1,0 +1,83 @@
+# Requerimientos Funcionales - TRIXCAMP
+
+## Sistema de Autenticación
+
+### RF-001: Registro de Usuarios
+**Descripción:** El sistema debe permitir el registro de nuevos usuarios con email y contraseña
+**Prioridad:** Alta
+**Fuente:** Documento de integradora
+**Criterios de Aceptación:**
+- Validación de formato de email
+- Contraseña con mínimo 6 caracteres
+- Confirmación de registro exitoso
+
+### RF-002: Login de Usuarios
+**Descripción:** El sistema debe permitir el acceso de usuarios registrados
+**Prioridad:** Alta
+**Fuente:** Documento de integradora
+**Criterios de Aceptación:**
+- Validación de credenciales
+- Redirección a dashboard después del login
+- Manejo de errores de autenticación
+
+## Gestión de Equipos
+
+### RF-003: Crear Equipo
+**Descripción:** Los administradores deben poder crear nuevos equipos
+**Prioridad:** Alta
+**Fuente:** Documento de integradora
+
+### RF-004: Listar Equipos
+**Descripción:** El sistema debe mostrar lista de equipos registrados
+**Prioridad:** Media
+**Fuente:** Documento de integradora
+
+## Gestión de Jugadores
+
+### RF-005: Registrar Jugador
+**Descripción:** Los administradores deben poder registrar nuevos jugadores
+**Prioridad:** Alta
+**Fuente:** Documento de integradora
+
+### RF-006: Asignar Jugador a Equipo
+**Descripción:** Los jugadores deben poder asignarse a un equipo específico
+**Prioridad:** Alta
+**Fuente:** Documento de integradora
+
+## Gestión de Campos Deportivos
+
+### RF-007: Monitoreo de Condiciones
+**Descripción:** El sistema debe mostrar temperatura, humedad y estado del campo
+**Prioridad:** Media
+**Fuente:** Documento de integradora
+
+### RF-008: Registro de Campos
+**Descripción:** Los administradores deben poder registrar nuevos campos deportivos
+**Prioridad:** Media
+**Fuente:** Documento de integradora
+
+## Gestión de Entrenamientos
+
+### RF-009: Agendar Entrenamiento
+**Descripción:** Los administradores deben poder agendar entrenamientos
+**Prioridad:** Media
+**Fuente:** Documento de integradora
+
+### RF-010: Asignar Campo a Entrenamiento
+**Descripción:** Cada entrenamiento debe asignarse a un campo específico
+**Prioridad:** Media
+**Fuente:** Documento de integradora
+
+## Requerimientos No Funcionales
+
+### RNF-001: Seguridad
+**Descripción:** Todas las comunicaciones deben usar HTTPS
+**Prioridad:** Alta
+
+### RNF-002: Rendimiento
+**Descripción:** El sistema debe responder en menos de 3 segundos
+**Prioridad:** Media
+
+### RNF-003: Compatibilidad
+**Descripción:** Debe funcionar en los principales navegadores web
+**Prioridad:** Alta
