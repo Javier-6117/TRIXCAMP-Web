@@ -1,9 +1,9 @@
-# 🌐 TRIXCAMP - Plataforma Web de Gestión Deportiva
+# TRIXCAMP - Plataforma Web de Gestión Deportiva
 
 ## Descripción
 TRIXCAMP es una plataforma web progresiva (PWA) diseñada para la gestión integral de instalaciones deportivas de fútbol. Permite el monitoreo en tiempo real de jugadores, control de condiciones del campo mediante sensores IoT, programación de actividades y administración de seguridad.
 
-## 🚀 Características Principales
+## Características Principales
 - **Dashboard centralizado** con métricas en tiempo real
 - **Gestión completa de equipos y jugadores** (CRUD)
 - **Monitoreo ambiental** de campos (temperatura, humedad, lluvia)
@@ -11,14 +11,14 @@ TRIXCAMP es una plataforma web progresiva (PWA) diseñada para la gestión integ
 - **Autenticación segura** con Firebase Auth
 - **Interfaz responsive** para todos los dispositivos
 
-## 🛠️ Tecnologías
+## Tecnologías
 - **Frontend:** HTML5, CSS3, JavaScript (ES6+)
 - **Backend:** Node.js + Express.js
 - **Base de datos:** Firebase Firestore
 - **Autenticación:** Firebase Auth
 - **Hosting:** (Por definir)
 
-## 👥 Equipo INFINITUM
+## Equipo INFINITUM
 | Rol | Integrante |
 |-----|------------|
 | Product Owner | Andrés Manuel Ramírez Gómez |
@@ -27,7 +27,7 @@ TRIXCAMP es una plataforma web progresiva (PWA) diseñada para la gestión integ
 | Diseñadora UI/UX | Claudia Lizbeth López Ramos |
 | Desarrollador Backend/Tester | Javier Adrián Frausto Alvarado |
 
-## 📦 Instalación y Uso
+## Instalación y Uso
 
 ### Prerrequisitos
 - Node.js 16+
