@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard - Gestión Fútbol</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0d1117;
+      color: #e6edf3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #b0b0b0;
+      margin-bottom: 25px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      background: #1f6feb;
+      color: #fff;
+      text-align: center;
+      padding: 16px 0;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #2b8eff;
+      transform: scale(1.05);
+    }
+
+    .resumen {
+      width: 100%;
+      max-width: 900px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #58a6ff;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .item-list {
+      list-style: none;
+      max-height: 150px;
+      overflow-y: auto;
+      font-size: 0.9em;
+    }
+
+    .item-list li {
+      padding: 5px 0;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .item-list li:last-child {
+      border: none;
+    }
+
+    .empty {
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>Panel - Gestión Fútbol</h1>
+  <p>Selecciona un módulo o revisa tus datos guardados:</p>
+
+  <!-- Botones principales -->
+  <div class="grid">
+    <a class="btn" href="/teams.html">Equipos</a>
+    <a class="btn" href="/players.html">Jugadores</a>
+    <a class="btn" href="/fields.html">Campos</a>
+    <a class="btn" href="/trainings.html">Entrenamientos</a>
+  </div>
+
+  <!-- Resumen general -->
+  <section class="resumen">
+    <div class="card">
+      <h3>Equipos</h3>
+      <ul id="teamsList" class="item-list"><li class="empty">Cargando...</li></ul>
+    </div>
+
+    <div class="card">
+      <h3>Jugadores</h3>
+      <ul id="playersList" class="item-list"><li class="empty">Cargando...</li></ul>
+    </div>
+
+    <div class="card">
+      <h3>Campos</h3>
+      <ul id="fieldsList" class="item-list"><li class="empty">Cargando...</li></ul>
+    </div>
+
+    <div class="card">
+      <h3>Entrenamientos</h3>
+      <ul id="trainingsList" class="item-list"><li class="empty">Cargando...</li></ul>
+    </div>
+  </section>
+
+  <script>
+    // Cargar datos desde el backend (Firebase o API)
+    async function fetchData(endpoint, listId) {
+      try {
+        const res = await fetch(`/api/${endpoint}`);
+        const data = await res.json();
+
+        const list = document.getElementById(listId);
+        list.innerHTML = '';
+
+        if (!data || data.length === 0) {
+          list.innerHTML = '<li class="empty">No hay registros.</li>';
+          return;
+        }
+
+        data.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item.name || item.nombre || 'Sin nombre';
+          list.appendChild(li);
+        });
+      } catch (error) {
+        document.getElementById(listId).innerHTML = '<li class="empty">Error al cargar.</li>';
+        console.error('Error al obtener datos:', error);
+      }
+    }
+
+    // Llamadas a los endpoints
+    fetchData('teams', 'teamsList');
+    fetchData('players', 'playersList');
+    fetchData('fields', 'fieldsList');
+    fetchData('trainings', 'trainingsList');
+  </script>
+</body>
+</html>

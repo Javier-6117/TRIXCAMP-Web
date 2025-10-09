@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Fields</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
+        <h2>Fields</h2>
+        <a class="btn" href="/dashboard.html">← Dashboard</a>
+      </div>
+
+      <form id="fieldForm" class="form-grid">
+        <input type="hidden" id="fieldId" />
+        <input id="fieldName" placeholder="Nombre campo" required />
+        <input id="fieldTemp" type="number" placeholder="Temperatura (°C)" />
+        <input id="fieldHumidity" type="number" placeholder="Humedad (%)" />
+        <label style="align-items:center;"><input id="fieldRaining" type="checkbox" /> Está lloviendo</label>
+        <div style="display:flex;gap:10px;">
+          <button type="submit" class="btn">Guardar</button>
+          <button type="button" id="cancelEdit">Cancelar</button>
+        </div>
+      </form>
+
+      <div class="card">
+        <table id="fieldsTable">
+          <thead><tr><th>Nombre</th><th>Temp</th><th>Humedad</th><th>Llueve</th><th>Acciones</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/fields.js"></script>
+</body>
+</html>

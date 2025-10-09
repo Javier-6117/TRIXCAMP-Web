@@ -1,0 +1,30 @@
+{
+  "name": "trixcamp",
+  "version": "1.0.0",
+  "description": "Proyecto TRIXCAMP - Login, Registro, Dashboard y Gestión de Jugadores con Firebase + Express",
+  "main": "backend/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "keywords": [
+    "express",
+    "firebase",
+    "crud",
+    "login",
+    "dashboard",
+    "trixcamp"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "firebase": "^12.3.0",
+    "firebase-admin": "^13.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

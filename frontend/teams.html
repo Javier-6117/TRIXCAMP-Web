@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Teams</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;">
+      <h2>Teams</h2>
+      <a class="btn" href="/dashboard.html">← Dashboard</a>
+    </div>
+
+    <form id="teamForm" class="form-grid card">
+      <input type="hidden" id="teamId" />
+      <input id="teamName" placeholder="Nombre equipo" required />
+      <input id="teamCoach" placeholder="Coach (opcional)" />
+      <div style="display:flex;gap:10px;">
+        <button type="submit" class="btn">Guardar</button>
+        <button type="button" id="cancelEdit">Cancelar</button>
+      </div>
+    </form>
+
+    <div class="card">
+      <table id="teamsTable">
+        <thead><tr><th>Nombre</th><th>Coach</th><th>Acciones</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="/js/teams.js"></script>
+</body>
+</html>
