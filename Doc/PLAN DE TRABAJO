@@ -1,0 +1,63 @@
+# Plan de Trabajo - TRIXCAMP
+
+## Cronograma de Actividades
+
+### Fase 1: Planificación y Diseño (Semana 1)
+**Fecha:** 07-13 Octubre 2025
+- [x] Definición de requisitos del proyecto
+- [x] Diseño de arquitectura del sistema
+- [x] Configuración de entorno de desarrollo
+- [x] Creación de repositorio GitHub
+
+### Fase 2: Desarrollo Backend (Semana 2)
+**Fecha:** 14-20 Octubre 2025
+- [ ] Implementación de API REST
+- [ ] Integración con Firebase
+- [ ] Desarrollo de sistema de autenticación
+- [ ] Creación de modelos de datos
+
+### Fase 3: Desarrollo Frontend (Semana 3)
+**Fecha:** 21-27 Octubre 2025
+- [ ] Desarrollo de interfaz de usuario
+- [ ] Implementación de vistas principales
+- [ ] Integración frontend-backend
+- [ ] Pruebas de funcionalidad
+
+### Fase 4: Pruebas y Ajustes (Semana 4)
+**Fecha:** 28 Oct - 03 Nov 2025
+- [ ] Pruebas de integración
+- [ ] Pruebas de usabilidad
+- [ ] Corrección de errores
+- [ ] Optimización de rendimiento
+
+### Fase 5: Documentación y Entrega (Semana 5)
+**Fecha:** 04-10 Noviembre 2025
+- [ ] Completar documentación técnica
+- [ ] Preparar presentación final
+- [ ] Revisión final del proyecto
+- [ ] Entrega del proyecto
+
+## Hitos Principales
+
+| Hito | Fecha | Entregable |
+|------|-------|------------|
+| H1 - Especificación Completa | 10/10/2025 | Documento IEEE 830 |
+| H2 - Backend Funcional | 20/10/2025 | API REST completa |
+| H3 - Frontend Completo | 27/10/2025 | Interfaz funcional |
+| H4 - Pruebas Completadas | 03/11/2025 | Reporte de pruebas |
+| H5 - Proyecto Terminado | 10/11/2025 | Proyecto completo |
+
+## Recursos Asignados
+
+**Equipo de Desarrollo:** 
+- Edgar Ulises Alanis Guerrero (Scrum Master)
+- Daniel García Ríos (Desarrollador)
+- Claudia Lizbeth López Ramos (Diseñadora)
+- Andrés Manuel Ramírez Gómez (Product Owner)
+- Javier Adrián Frausto Alvarado (Tester)
+
+**Tecnologías:**
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js, Express.js
+- Base de datos: Firebase
+- Control de versiones: GitHub
