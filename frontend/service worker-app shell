@@ -1,0 +1,136 @@
+const CACHE_NAME = 'infinum-cache-v104';
+const DATA_CACHE_NAME = 'infinum-data-cache-v10';
+
+const APP_SHELL = [
+  '/',
+  '/index.html',
+  '/dashboard.html',
+  '/players.html',
+  '/teams.html',
+  '/fields.html',
+  '/trainings.html',
+  '/css/dashboard.css',
+  '/css/styles.css',
+  '/js/authCheck.js',
+  '/js/dashboard.js',
+  '/js/fields.js',
+  '/js/firebaseConfig.js',
+  '/js/login.js',
+  '/js/main.js',
+  '/js/players.js',
+  '/js/register.js',
+  '/js/teams.js',
+  '/js/trainings.js',
+  '/icons/icon-192.png'
+];
+
+const EXAMPLE_DATA = {
+  teams: [{ name: "Equipo A", coach: "Juan" }, { name: "Equipo B", coach: "Ana" }],
+  players: [
+    { name: "Jugador 1", team: { name: "Equipo A" } },
+    { name: "Jugador 2", team: { name: "Equipo B" } }
+  ],
+  fields: [
+    { name: "Campo 1", temperature: 25, humidity: 60, isRaining: false },
+    { name: "Campo 2", temperature: 22, humidity: 70, isRaining: true }
+  ],
+  trainings: [
+    { team: { name: "Equipo A" }, field: { name: "Campo 1" }, datetime: new Date().toISOString() }
+  ]
+};
+
+// 🧩 Instalar y cachear los archivos principales
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(APP_SHELL))
+      .then(() => self.skipWaiting())
+  );
+});
+
+// 🔄 Activar y limpiar caches viejos
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(
+        keys.map(key => {
+          if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) return caches.delete(key);
+        })
+      )
+    )
+  );
+  self.clients.claim();
+});
+
+// ⚙️ Interceptar las solicitudes (fetch)
+self.addEventListener('fetch', event => {
+  const request = event.request;
+  const url = new URL(request.url);
+
+  // 🚫 No cachear POST o login
+  if (request.method !== 'GET' || url.pathname.includes('/api/auth/login')) {
+    return event.respondWith(fetch(request));
+  }
+
+  // 🧾 Cache de la API (Firestore / Express)
+  if (url.pathname.startsWith('/api/')) {
+    event.respondWith(
+      caches.open(DATA_CACHE_NAME).then(async cache => {
+        try {
+          const response = await fetch(request);
+          if (response && response.ok) {
+            cache.put(request, response.clone());
+          }
+          return response;
+        } catch (err) {
+          const cached = await cache.match(request);
+          if (cached) return cached;
+
+          // ⚡ Fallback de ejemplo si no hay conexión ni cache
+          const endpoint = url.pathname.split('/').pop();
+          const fallback = EXAMPLE_DATA[endpoint] || [];
+          return new Response(JSON.stringify(fallback), {
+            headers: { 'Content-Type': 'application/json' }
+          });
+        }
+      })
+    );
+    return;
+  }
+
+  // 🖼️ Cache de imágenes e íconos
+  if (url.pathname.startsWith('/icons/')) {
+    event.respondWith(
+      caches.match(request).then(res => res || fetch(request))
+    );
+    return;
+  }
+
+  // 📄 Archivos HTML y JS de cada sección (esto es lo nuevo 👇)
+  if (
+    url.pathname.endsWith('.html') ||
+    url.pathname.endsWith('.js') ||
+    url.pathname.endsWith('.css')
+  ) {
+    event.respondWith(
+      caches.match(request).then(res => {
+        return res || fetch(request).then(netRes => {
+          if (netRes && netRes.ok) {
+            const clone = netRes.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
+          }
+          return netRes;
+        });
+      })
+    );
+    return;
+  }
+
+  // 🧭 Fallback para navegación sin conexión
+  event.respondWith(
+    caches.match(request).then(response => {
+      if (response) return response;
+      return fetch(request).catch(() => caches.match('/index.html'));
+    })
+  );
+});
